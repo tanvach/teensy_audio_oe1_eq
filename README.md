@@ -18,3 +18,6 @@ You need to solder a 3.5mm audio plug to LINEIN on the Audio Board.
 
 # Recommendation
 - Use the shortest possible audio and USB cable. You can get a short (~6 inch) USB-C to micro-USB on Amazon. This reduces ground loop increase audio quality.
+
+# PC EQ
+If you don't want to use the hardware, 'OE1 adj ParametricEQ.txt' contains the EQ settings you can use to equalize the BMR drivers though software (i.e. Equalizer APO).
