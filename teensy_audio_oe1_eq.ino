@@ -46,26 +46,26 @@ void setup() {
   // 140: somewhat aggressive bass boost. Usable range ~ 100 - 160. Lower is more bass
   // 0: enable high pass filter
   // 4: Cutoff freq ~175Hz
-  audioShield.enhanceBass((float)1,(float)140,(uint8_t)0,(uint8_t)4);
-  audioShield.enhanceBassEnable();
+//  audioShield.enhanceBass((float)1,(float)140,(uint8_t)0,(uint8_t)4);
+//  audioShield.enhanceBassEnable();
   // please see http://www.pjrc.com/teensy/SGTL5000.pdf page 50 for valid values for BYPASS_HPF and CUTOFF
 
   // Parametric EQ based on AutoEQ output
   audioShield.eqSelect(1);
   audioShield.eqFilterCount(7);
-  calcBiquad(FILTER_PARAEQ, 58, 7.0, 0.23, 524288, 44100, updateFilter);
+  calcBiquad(FILTER_PARAEQ, 59, 6.6, 0.17, 524288, 44100, updateFilter);
   audioShield.eqFilter(0,updateFilter);
-  calcBiquad(FILTER_PARAEQ, 217, -10.4, 1.58, 524288, 44100, updateFilter);
+  calcBiquad(FILTER_PARAEQ, 243, -6.4, 1.71, 524288, 44100, updateFilter);
   audioShield.eqFilter(1,updateFilter);
-  calcBiquad(FILTER_PARAEQ, 712, 2.7, 3.73, 524288, 44100, updateFilter);
+  calcBiquad(FILTER_PARAEQ, 811, 2.2, 1.90, 524288, 44100, updateFilter);
   audioShield.eqFilter(2,updateFilter);
-  calcBiquad(FILTER_PARAEQ, 1062, 3.8, 2.25, 524288, 44100, updateFilter);
+  calcBiquad(FILTER_PARAEQ, 1189, 3.3, 2.45, 524288, 44100, updateFilter);
   audioShield.eqFilter(3,updateFilter);
-  calcBiquad(FILTER_PARAEQ, 1581, -7.6, 2.60, 524288, 44100, updateFilter);
+  calcBiquad(FILTER_PARAEQ, 1645, -7.2, 0.64, 524288, 44100, updateFilter);
   audioShield.eqFilter(4,updateFilter);
-  calcBiquad(FILTER_PARAEQ, 2530, -4.3, 2.91, 524288, 44100, updateFilter);
+  calcBiquad(FILTER_PARAEQ, 6243, 1.4, 0.30, 524288, 44100, updateFilter);
   audioShield.eqFilter(5,updateFilter);
-  calcBiquad(FILTER_PARAEQ, 3321, 3.8, 1.66, 524288, 44100, updateFilter);
+  calcBiquad(FILTER_PARAEQ, 19864, -7.8, 0.38, 524288, 44100, updateFilter);
   audioShield.eqFilter(6,updateFilter);
 
   // High pass filter adds noise for some reason. We don't need it.
